@@ -4,8 +4,8 @@ import shutil
 import os
 from collections import Counter
 import matplotlib.pyplot as plt
-
-path = "W:/X75/OPT1/DATA/"
+from TOAN import Test
+path = Test.getPath()
 all_label = []
 label = {}
 

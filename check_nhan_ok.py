@@ -4,7 +4,7 @@ import shutil
 from TOAN import Test
 
 
-TM = Test.getPath1() 
+TM = Test.getPath() 
 def checkok(TM):  
     txt = glob(TM + '*.txt')
     c = 0
@@ -19,7 +19,6 @@ def checkok(TM):
                 tmp = line.split()
                 lst.append(tmp[0])
         if set(['10','11','12','13','14','15','16']).issubset(set(lst)):
-        # if set(['6','7','9','9','10','11','12','13','14','15','16','17']).issubset(set(lst)):
             continue
         else: 
             c +=1 
@@ -65,7 +64,7 @@ def xoanhanokunder_coptc(TM):
                             y0 = float(line.strip().split()[2])
                             w0 = float(line.strip().split()[3])
                             h0 = float(line.strip().split()[4])
-                            if w0 > 0.03 or h0 > 0.03:
+                            if w0 > 0.242375/6 or h0 > 0.2796666/6:
                                 if xmin < x0 < xmax  and ymin < y0 < ymax:
                                     for index,line in enumerate(Lines):  
                                         if line.strip().split()[0] == outer and index == myindex:
@@ -98,7 +97,7 @@ def xoanhanokunder_coptc(TM):
 
                             w0 = float(line.strip().split()[3])
                             h0 = float(line.strip().split()[4])
-                            if w0 > 0.03 or h0 > 0.03:
+                            if w0 > 0.242375/6 or h0 > 0.2796666/6:
                                 if xmin < x0 < xmax  and ymin < y0 < ymax:
                                     for index,line in enumerate(Lines):  
                                         if line.strip().split()[0] == outer and index == myindex:
@@ -111,6 +110,7 @@ def xoanhanokunder_coptc(TM):
                             else:
                                 cnt += 1 
                                 print(cnt) 
-checkok(TM)  
+# checkok(TM)  
+xoanhanokunder_coptc(TM)
 print('completed')
 

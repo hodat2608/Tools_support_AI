@@ -2,13 +2,14 @@ from glob import glob
 import os,shutil
 from TOAN import Test
 
-TM1 = Test.getPath1()
+TM1 = Test.getPath()
 def doiten(TM1):
     fname = glob(TM1 + '*.jpg')
     c = len(fname)
     for filename in fname:
-        os.rename(filename , filename[:-4] + '-QC.jpg' )
-        os.rename(filename[:-3] + 'txt' , filename[:-4] + '-QC.txt' )
+        print(filename)
+        os.rename(filename , filename[:-4] + '_lx.jpg' )
+        os.rename(filename[:-3] + 'txt' , filename[:-4] + '_lx.txt' )
         c-=1 
 
 # def locangtheoten(TM1):

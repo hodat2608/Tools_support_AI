@@ -21,12 +21,7 @@ for filename in txt:
                 if not line:
                     break
                 tmp = line.split()
-                if tmp[0] not in ['6','7','8','9','10','11','12','13','14','15','16','17']:
-                # if tmp[0] not in ['8','9','10','11','12','13','14','15','16','17','18','19','20']:
-                # if tmp[0] not in ['8','9','10','11','12','13','14']:
-                #if tmp[0] in ['0', '1', '3']:
-                #if tmp[0] not in ['13']:
-                # if tmp[0] not in ['6']:
+                if tmp[0] not in ['4','5','6','7']:
                     out.writelines(line)
         f.close()
         out.close()

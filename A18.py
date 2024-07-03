@@ -1,7 +1,7 @@
 from glob import glob
 import os,shutil
 from TOAN import Test
-TM = Test.getPath1()     
+TM = Test.getPath()     
 def ganokTC(TM):
     txt = glob(TM + '*.txt')
     try :
@@ -10,12 +10,12 @@ def ganokTC(TM):
         pass
     out_dir = TM + 'dat/'
     cnt = len(txt)
-    nhan_lam_chuan = ['0 0.486875 0.741667 0.206250 0.233333'] #nhan so 1 
-    nhanso2 =        ['1 0.490000 0.499167 0.413750 0.528333'] #nhan so 2
-    nhanso3 =        ['2 0.199687 0.322083 0.166875 0.140833'] #nhan so 3
-    nhanso4 =        ['3 0.807813 0.328750 0.221875 0.135833'] #nhan so 4
-    nhanso5 =        ['4 0.938438 0.585000 0.118125 0.348333'] #nhan so 5
-    nhanso6 =        ['5 0.051250 0.570000 0.101250 0.355000'] #nhan so 6
+    nhan_lam_chuan = ['0 0.137692 0.486538 0.256923 0.526923'] #nhan so 1 
+    nhanso2 =        ['1 0.287692 0.485256 0.063077 0.698718'] #nhan so 2
+    nhanso3 =        ['2 0.580000 0.233974 0.543077 0.370513'] #nhan so 3
+    nhanso4 =        ['3 0.580769 0.705769 0.541538 0.434615'] #nhan so 4
+    nhanso5 =        ['4 0.585769 0.453205 0.533077 0.080769'] #nhan so 5
+    nhanso6 =        ['4 0.905000 0.497436 0.108462 0.969231'] #nhan so 6
 
     nhan_lam_chuan = nhan_lam_chuan[0].split()
     nhanso2 = nhanso2[0].split()
@@ -65,16 +65,13 @@ def ganokTC(TM):
                     tmp = line.split()
                     if int(tmp[0])< 10:
                         if int(tmp[0]) == 0:
-                            tam_nhan_so_2 = str(float(tmp[1]) + float(abs(x_nhan_lam_chuan-x_nhanso_2))) + ' ' + str(float(tmp[2]) - float(abs(y_nhan_lam_chuan-y_nhanso_2)))
-                            tam_nhan_so_3 = str(float(tmp[1]) - float(abs(x_nhan_lam_chuan-x_nhanso_3))) + ' ' + str(float(tmp[2]) - float(abs(y_nhan_lam_chuan-y_nhanso_3)))
-                            tam_nhan_so_4 = str(float(tmp[1]) + float(abs(x_nhan_lam_chuan-x_nhanso_4))) + ' ' + str(float(tmp[2]) - float(abs(y_nhan_lam_chuan-y_nhanso_4)))
+                            tam_nhan_so_2 = str(float(tmp[1]) + float(abs(x_nhan_lam_chuan-x_nhanso_2))) + ' ' + str(float(tmp[2]) + float(abs(y_nhan_lam_chuan-y_nhanso_2)))
+                            tam_nhan_so_3 = str(float(tmp[1]) + float(abs(x_nhan_lam_chuan-x_nhanso_3))) + ' ' + str(float(tmp[2]) - float(abs(y_nhan_lam_chuan-y_nhanso_3)))
+                            tam_nhan_so_4 = str(float(tmp[1]) + float(abs(x_nhan_lam_chuan-x_nhanso_4))) + ' ' + str(float(tmp[2]) + float(abs(y_nhan_lam_chuan-y_nhanso_4)))
                             tam_nhan_so_5 = str(float(tmp[1]) + float(abs(x_nhan_lam_chuan-x_nhanso_5))) + ' ' + str(float(tmp[2]) - float(abs(y_nhan_lam_chuan-y_nhanso_5)))
-                            tam_nhan_so_6 = str(float(tmp[1]) - float(abs(x_nhan_lam_chuan-x_nhanso_6))) + ' ' + str(float(tmp[2]) - float(abs(y_nhan_lam_chuan-y_nhanso_6)))
+                            tam_nhan_so_6 = str(float(tmp[1]) + float(abs(x_nhan_lam_chuan-x_nhanso_6))) + ' ' + str(float(tmp[2]) + float(abs(y_nhan_lam_chuan-y_nhanso_6)))
                     out.writelines(line) 
-                out.writelines( str(stt_nhan_so_2) + space + str(tam_nhan_so_2) + space + str(wh_nhanso_2) + xuong_hang + 
-                                str(stt_nhan_so_3) + space + str(tam_nhan_so_3) + space + str(wh_nhanso_3) + xuong_hang +
-                                str(stt_nhan_so_4) + space + str(tam_nhan_so_4) + space + str(wh_nhanso_4) + xuong_hang +
-                                str(stt_nhan_so_5) + space + str(tam_nhan_so_5) + space + str(wh_nhanso_5) + xuong_hang +
+                out.writelines( 
                                 str(stt_nhan_so_6) + space + str(tam_nhan_so_6) + space + str(wh_nhanso_6) + xuong_hang )  
         else : 
             shutil.copyfile(filename, out_dir + tenf)

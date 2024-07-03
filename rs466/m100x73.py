@@ -32,7 +32,7 @@ class YS_PTC:
                         if not line:
                             break
                         tmp = line.split()
-                        if int(tmp[0]) < 9:
+                        if int(tmp[0]) <= 9:
                             if int(tmp[0]) == 0:
                                 tam = tmp[1] + ' ' + tmp[2]
                     out.writelines('10 ' + tam + ' 0.955085 0.935000') 
@@ -261,7 +261,7 @@ class YS_PTC:
                                 y0 = float(line.strip().split()[2])
                                 w0 = float(line.strip().split()[3])
                                 h0 = float(line.strip().split()[4])
-                                if w0 > 0.242375/4 or h0 > 0.2796666/4:
+                                if w0 > 0.242375/6 or h0 > 0.2796666/6:
                                     if xmin < x0 < xmax  and ymin < y0 < ymax:
                                         for index,line in enumerate(Lines):  
                                             if line.strip().split()[0] == outer and index == myindex:
@@ -294,7 +294,7 @@ class YS_PTC:
 
                                 w0 = float(line.strip().split()[3])
                                 h0 = float(line.strip().split()[4])
-                                if w0 > 0.242375/4 or h0 > 0.2796666/4:
+                                if w0 > 0.242375/6 or h0 > 0.2796666/6:
                                     if xmin < x0 < xmax  and ymin < y0 < ymax:
                                         for index,line in enumerate(Lines):  
                                             if line.strip().split()[0] == outer and index == myindex:

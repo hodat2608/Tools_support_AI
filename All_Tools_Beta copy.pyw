@@ -25,7 +25,6 @@ layout_locnhan = [[sg.Text('')],
             [sg.Text('Chọn thư mục gốc ')],
             [sg.Input(size=(55,1), font=('Helvetica',12), key='input_folder_locnhan'),
              sg.FolderBrowse(size=(12,1), font=('Helvetica',10),key= 'TM',enable_events=True)],
-
             [sg.Text('')],
 
             [sg.Text('Chọn thư mục lưu ')],
@@ -584,14 +583,14 @@ while True:
             progress_loc_nhan_copy()
         if values['TMP1'] == '' or values['TMP1'] == None and values['TMP2'] != None :
             progress_loc_nhan_copy_expt()
-        clearinput()
+        # clearinput()
 
     if event == 'move_file':
         if values['TMP2'] == '' or values['TMP2'] == None and values['TMP1'] != None :
             progress_loc_nhan_move()
         if values['TMP1'] == '' or values['TMP1'] == None and values['TMP2'] != None :
             progress_loc_nhan_move_expt()
-        clearinput()
+        # clearinput()
 
     if event == 'copy_file_celender':
         progress_loc_nhan_copy_celender

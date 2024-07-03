@@ -2,20 +2,17 @@ from glob import glob
 import os,shutil
 from TOAN import Test
 
-TM = Test.getPath1()
+TM = Test.getPath()
 # TM_save = Test.getPath2()
 c = 0      
-fname = glob(TM + '*.lnk')
+fname = glob(TM + '*.jpg')
 # fname = os.listdir(TM)
 for filename in fname:
-    # tenf = os.path.basename(filename) 
-    os.remove(filename)
-    # print(tenf)
-    # if (str(tenf[0:2])) == 'BC':
-    # if (str(tenf[-7:-4])) == '3CD':Shortcut
-    # if 'Shortcut' in tenf:
-    #     shutil.move(filename , TM_save + tenf)
-    #     print(tenf)
+    tenf = os.path.basename(filename) 
+    print(tenf)
+    if ' - Copy.jpg' in tenf:
+        os.remove(filename)
+        print(tenf)
     # else:
     #     continue
         # os.remove(filename[:-3] + 'txt')

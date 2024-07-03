@@ -1,0 +1,164 @@
+import PySimpleGUI as sg
+from glob import glob                                                           
+import os
+import shutil 
+import time
+from TOAN import Test
+TM = Test.getPath1()   
+TM_SAV =  Test.getPath2()
+
+def copy(TM,TM_SAV):
+    c = 0
+    txt = glob(TM + '*.txt')
+
+    c_fd = TM_SAV + 'c/' 
+    sat = TM_SAV + 'sat/' 
+    divat = TM_SAV + 'divat/' 
+    me = TM_SAV + 'me/' 
+    lech_chan = TM_SAV + 'lech_chan/' 
+    keo_tran = TM_SAV + 'keo_tran/' 
+    chan_de = TM_SAV + 'chan_de/' 
+    chan_tu = TM_SAV + 'chan_tu/' 
+    di_thuong = TM_SAV + 'di_thuong/' 
+    tai_ok = TM_SAV + 'tai_ok/' 
+    tu_dai = TM_SAV + 'tu_dai/' 
+    me_giua = TM_SAV + 'me_giua/' 
+    me_cuoi = TM_SAV + 'me_cuoi/' 
+    mau_ng = TM_SAV + 'mau_ng/' 
+    mau_ok = TM_SAV + 'mau_ok/' 
+
+    for filename in txt:
+        tenf = os.path.basename(filename)
+        if tenf != 'classes.txt' and tenf != 'lastclasses.txt':
+            #out = open(out_dir + tenf,'w')
+            with open(filename, 'r') as f:
+                while True:
+                    line = f.readline()
+                    if not line:
+                        break
+                    tmp = line.split()
+                    if int(tmp[0]) == 0:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , c_fd + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , c_fd + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+                    elif int(tmp[0]) == 1:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , sat + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , sat + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+                    elif int(tmp[0]) == 2:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , divat + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , divat + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+                    elif int(tmp[0]) == 3:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , me + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , me + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+
+                    elif int(tmp[0]) == 4:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , lech_chan + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , lech_chan + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+
+                    elif int(tmp[0]) == 5:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , keo_tran + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , keo_tran + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+
+                    elif int(tmp[0]) == 6:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , chan_de + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , chan_de + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+                    elif int(tmp[0]) == 7:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , chan_tu + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , chan_tu + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+
+                    elif int(tmp[0]) == 8:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , di_thuong + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , di_thuong + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+
+                    elif int(tmp[0]) == 9:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , tai_ok + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , tai_ok + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+
+                    elif int(tmp[0]) == 10:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , tu_dai + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , tu_dai + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+
+                    elif int(tmp[0]) == 11:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , me_giua + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , me_giua + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+                        
+                    elif int(tmp[0]) == 11:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , me_cuoi + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , me_cuoi + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+                    
+                    elif int(tmp[0]) == 12:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , me_cuoi + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , me_cuoi + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+
+                    elif int(tmp[0]) == 16:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , mau_ok + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , mau_ok + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+
+                    elif int(tmp[0]) == 17:
+                        c += 1
+                        if os.path.exists(filename):
+                            shutil.copy(filename , mau_ng + tenf)
+                        if os.path.exists(filename[:-3]+'jpg'):
+                            shutil.copy(filename[:-3]+'jpg' , mau_ng + tenf[:-3] + 'jpg')
+                            print(c , "-" , tenf)
+
+copy(TM,TM_SAV)

@@ -2,7 +2,7 @@ from glob import glob
 import os
 import shutil 
 from TOAN import Test
-TM = Test.getPath1()   
+TM = Test.getPath()   
 def xoa_jpg_ko_co_txt(TM):
     txt = glob(TM + '*.jpg')
     c = 0

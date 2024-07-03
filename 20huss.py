@@ -1,18 +1,35 @@
-from Crypto.Cipher import AES
-from Crypto.Random import get_random_bytes
-import base64
+# import argparse
 
-# Hàm để mã hóa email
-def encrypt_email(email, secret_key):
-    cipher = AES.new(secret_key, AES.MODE_EAX)
-    ciphertext, tag = cipher.encrypt_and_digest(email.encode('utf-8'))
-    encoded_cipher = base64.b64encode(cipher.nonce + ciphertext + tag).decode('utf-8')
-    return encoded_cipher
+# def main(args):
+#     print(f"Welcome, {args.name}!")
+#     if args.verbose:
+#         print("Verbose mode is on!")
+#     if args.square:
+#         print(f"The square of {args.square} is {args.square ** 2}") 
 
-# Tạo một khóa bí mật (lưu ý rằng bạn cần bảo mật khóa này)
-secret_key = get_random_bytes(16)
+# if __name__ == "__main__":
+#     parser = argparse.ArgumentParser(description="Argument Parsing Example")
 
-# Sử dụng hàm encrypt_email để mã hóa email
-email = "abc132@gmail.com"
-encoded_cipher = encrypt_email(email, secret_key)
-print("Email sau khi mã hóa:", encoded_cipher)
+#     # Thêm các đối số bạn muốn xử lý
+#     parser.add_argument('name', type=str, help='Your name')
+#     parser.add_argument('--verbose', '-v', action='store_true', help='Enable verbose mode')
+#     parser.add_argument('--square', type=int, help='Square the number')
+
+#     # Phân tích các đối số từ dòng lệnh
+#     args = parser.parse_args()
+
+#     # Gọi hàm main và truyền các đối số đã phân tích
+#     main(args)
+
+# from pathlib import Path
+
+# path = r'D:/TAM_SAT_M100_A75/FILE_TRAIN/20240520/train/images'
+# parent_dir = Path(path).parent
+
+# print(parent_dir)
+from pathlib import Path
+
+image_path = r'D:/TAM_SAT_M100_A75/FILE_TRAIN/20240520/train/images/abc.jpg'
+labels_path = Path(image_path).parent
+
+print(labels_path)

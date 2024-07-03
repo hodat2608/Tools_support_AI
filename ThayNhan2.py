@@ -2,7 +2,7 @@ from glob import glob
 import os,shutil
 from TOAN import Test
 
-TM = Test.getPath1()  
+TM = Test.getPath()  
 # def thaynhan(TM):     
 #     txt = glob(TM + '*.txt')
 #     try :
@@ -146,8 +146,8 @@ def line90(TM):
                     #     pass
                         # else:
                         #     line = str(tmp[0]) + ' ' + str(float(tmp[1])+ 0.004)+ ' ' + str(float(tmp[2]) - 0.004) +  ' ' + str(tmp[3]) + ' ' + str(tmp[4]) + '\n'
-                    if int(tmp[0])== 1: #taychoi
-                        line = tmp[0] + ' ' + str(float(tmp[1]))+ ' ' + str(float(tmp[2]))+ ' '+'0.182500 0.080000\n'
+                    if int(tmp[0])== 6: #taychoi
+                        line = tmp[0] + ' ' + str(float(tmp[1]))+ ' ' + str(float(tmp[2]))+ ' ' + str(float(tmp[3])) + ' ' + str(float(tmp[4])-0.04 ) + '\n'
                     # if int(tmp[0])== 2: #chaudien 
                     #     line = tmp[0] + ' ' + str(float(tmp[1]))+ ' ' + str(float(tmp[2]))+ ' '+'0.117500 0.175833\n'
                     # if int(tmp[0])== 8: 

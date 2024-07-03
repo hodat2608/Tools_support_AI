@@ -228,7 +228,7 @@ def xoanhanok(TM):
                             h0 = float(line.strip().split()[4])
                             #bui chi 0.013750 0.018333
                             #divat 0.025000 0.033333
-                            if w0 > 0.3/4 or h0 > 0.3/4:
+                            if w0 > 0.3/6 or h0 > 0.3/6:
                                 if xmin < x0 < xmax  and ymin < y0 < ymax:
                                     for index,line in enumerate(Lines):  
                                         if line.strip().split()[0] == outer and index == myindex:
@@ -266,7 +266,7 @@ def xoanhanok(TM):
                             h0 = float(line.strip().split()[4])
                             #bui chi 0.142375 0.1896666
                             #divat 0.025000 0.033333
-                            if w0 > 0.3/4 or h0 > 0.3/4:
+                            if w0 > 0.3/6 or h0 > 0.3/6:
                                 if xmin < x0 < xmax  and ymin < y0 < ymax:
                                     for index,line in enumerate(Lines):  
                                         if line.strip().split()[0] == outer and index == myindex:
@@ -281,10 +281,10 @@ def xoanhanok(TM):
                                 print(cnt)    
 
 
-# ganokCD(TM)
-# chiaCD(TM)
-ganokTC(TM)
-chiaTC(TM)
+ganokCD(TM)
+chiaCD(TM)
+# ganokTC(TM)
+# chiaTC(TM)
 xoanhanok(TM)
 
 
